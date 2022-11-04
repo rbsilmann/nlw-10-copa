@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 63px;
+    text-align: center;
+}
+
+body {
+    /* background-color: #121214;
+    background-image: var(--bg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background: #121214 var(--bg) no-repeat top center/cover;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    width: fit-content;
+    margin: 52px auto;
+    padding-top: 52px;
+}
+
+ul {
+    list-style: none;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card {
+    padding: 32px 23px;
+    text-align: center;
+    background: var(--card-bg-color);
+    border-bottom: 2px solid var(--card-color-primary);
+    border-radius: 6px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: appear 2s forwards;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    padding: 8px 16px;
+    border: 1px solid var(--card-title-border-color);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 53px;
+    color: var(--card-color-primary);
+    text-transform: uppercase;
+}
+
+.card h2 span {
+    color: #e1e1e6;
+    font-size: 14px;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 270px;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card ul li + li {
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+}
+
+.card ul li strong {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 125%;
+    color: #e1e1e6;
+}
+
+:root {
+    --card-color-primary: #f7dd43;
+    --card-title-border-color: #746615;
+    --card-bg-color: #1d1c19;
+    --bg: url(./assets/bg-blue.svg)
+}
+
+body.blue {
+    --card-color-primary: #338af3;
+    --card-title-border-color: #338af3;
+    --card-bg-color: #202024;
+    --bg: url(./assets/bg-yellow.svg)
+}
+
+body.green {
+    --card-color-primary: #047c3f;
+    --card-title-border-color: #047c3f;
+    --card-bg-color: #1a1f1b;
+    --bg: url(./assets/bg-green.svg)
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    .cards {
+        max-width: 670px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
